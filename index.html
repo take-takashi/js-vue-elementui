@@ -1,0 +1,24 @@
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8">
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+		<title>test</title>
+	</head>
+	<body id="VUEAPP">
+		<form name="main">
+			test.
+		</form>
+		<script>
+			var VUEAPP = new Vue({
+				el: 'VUEAPP',
+				mounted: function() {
+					axios.get('./data/test.json')
+					.then(function(response) {
+						console.log(response.data);
+					});
+				}
+			});
+		</script>
+	</body>
+</html>
