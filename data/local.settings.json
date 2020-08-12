@@ -1,0 +1,4 @@
+{
+	"api_host_url": "http://localhost:8000/api/",
+	"api_test" : "api_test"
+}

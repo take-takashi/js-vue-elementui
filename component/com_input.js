@@ -1,5 +1,5 @@
 (function() {
-	Vue.component('com-input', {
+	Vue.component('com_input', {
 		props: {
 			args: {
 				type: Object,
@@ -30,17 +30,18 @@
 			<template>
 				<span>
 					<span v-if="args.type == 'text'">
-						<span>{{ args.label }}</span>
 						<el-input :name="args.name" v-model="value" :maxlength="args.maxlength"></el-input>
 					</span>
 					
+					<span v-if="args.type == 'password'">
+						<el-input :name="args.name" v-model="value" show-password="false" :maxlength="args.maxlength"></el-input>
+					</span>
+					
 					<span v-if="args.type == 'date'">
-						<span>{{ args.label }}</span>
 						<el-date-picker :name="args.name" type="date" v-model="value" ></el-date-picker>
 					</span>
 					
 					<span v-if="args.type == 'daterange'">
-						<span>{{ args.label }}</span>
 						<el-date-picker :name="args.name" type="daterange" v-model="value" ></el-date-picker>
 					</span>
 				</span>

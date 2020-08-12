@@ -3,52 +3,39 @@
 		<meta charset="UTF-8">
 		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
 		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-		<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
 		<script src="https://unpkg.com/element-ui/lib/index.js"></script>
-		<script>Vue.config.devtools = true;</script>
-		<script src="component.js"></script>
+		<script src="https://unpkg.com/element-ui/lib/umd/locale/ja.js"></script>
+		<script>
+			Vue.config.devtools = true;
+			ELEMENT.locale(ELEMENT.lang.ja);
+		</script>
+		<!-- loading component -->
+		<script src="component/com_input.js"></script>
+		<!-- loading page -->
+		<script src="page/page_login.js"></script>
+		<script src="page/page_test_input.js"></script>
+		<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+		<link rel="stylesheet" href="com_style.css">
 		<title>test</title>
 	</head>
 	<body>
-		<form name="main" id="VUEAPP">
+		<div id="VUEAPP">
 			
-			<span v-for="spec in specs">
-				<p>
-					<com-input :args="spec" ref="forms"></com-input>
-				</p>
-			</span>
-		<button type="button" onclick="onSubmit()">submit</button>
+			<el-tabs type="border-card">
+				<el-tab-pane label="login"><page_login></page_login></el-tab-pane>
+				<el-tab-pane label="test_input"><page_test_input></page_test_input></el-tab-pane>
+				<el-tab-pane label="Role">Role</el-tab-pane>
+				<el-tab-pane label="Task">Task</el-tab-pane>
+			</el-tabs>
 			
-		</form>
-		
+		</div><!-- /id#VUEAPP -->
 		<script>
-
 			var VUEAPP = new Vue({
 				el: '#VUEAPP',
 				data: {
-					specs: [
-						{ name: "company_id", label: "企業ID", type: "text" },
-						{ name: "report_datetime", label: "日付", type: "date"},
-						{ name: "daterange", label: "FromTo", type: "daterange"}
-					]
 				}
 			});
 			
-			function onSubmit(){
-				var forms = VUEAPP.$refs.forms;
-				var data = new FormData();
-				data.
-				for(var i = 0; i < forms.length; i++){
-					console.log(forms[i].name, forms[i].value);
-					data.append(forms[i].name, forms[i].value);
-				}
-				
-				axios.post('http://localhost:8000/js-vue-test/test.php', data)
-				.then(function(response){
-					console.log(response);
-				});
-			}
-
 		</script>
 	</body>
 </html>
