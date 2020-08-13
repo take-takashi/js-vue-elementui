@@ -1,5 +1,7 @@
 body {
-	font-family: "Hiragino Maru Gothic W4 JIS2004", "游ゴシック", "游ゴシック体", "YuGothic", "Yu Gothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: "Hiragino Maru Gothic W4 JIS2004", "游ゴシック", "游ゴシック体", 
+		"YuGothic", "Yu Gothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", 
+		"メイリオ", Meiryo, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-weight: 600;
 }
 
@@ -13,7 +15,6 @@ textarea {
 	color: inherit;
 	font-weight: inherit;
 }
-
 .el-tabs__item,
 .el-button {
 	font-weight: inherit;

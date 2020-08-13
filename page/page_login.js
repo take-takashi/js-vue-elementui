@@ -24,7 +24,7 @@
 					<el-button style="float: right; padding: 3px 0" type="text">パスワードを忘れた場合</el-button>
 				</div>
 				
-				<el-form label-width="11rem">
+				<el-form label-width="11em">
 					<el-form-item v-for="spec in specs" :label="spec.label">
 						<com_input :args="spec" ref="forms"></com_input>
 					</el-form-item>

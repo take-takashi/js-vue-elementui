@@ -26,9 +26,16 @@
 		},
 		template: `
 			<div>
-				<el-form ref="form" :model="form" label-width="120px">
-					<el-form-item label="名前">
-						<el-input v-model="form.name"></el-input>
+				<el-form>
+					<el-form-item>
+						<el-row>
+							<el-col :sm="2">
+								<span>テスト</span>
+							</el-col>
+							<el-col :sm="22">
+								<el-input v-model="form.name"></el-input>
+							</el-col>
+						</el-row>
 					</el-form-item>
 					
 					<el-form-item>
